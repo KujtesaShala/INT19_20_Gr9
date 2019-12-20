@@ -1,4 +1,4 @@
-<script>
+
 window.onload=function(){
 var c;
 var canvas = document.querySelector("canvas");
@@ -185,5 +185,4 @@ AIPlayer(); //init AI player
   
  animate(); //init animate(); function
 
-}; //end of onload function
-</script>
+}; 
