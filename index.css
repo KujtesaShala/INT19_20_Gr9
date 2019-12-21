@@ -170,3 +170,22 @@ button.butoni{
    
  
   }
+    p.titulli_posht
+  {
+  font-size:50px;
+  font-family:'Times New Roman';
+  color:#262626;
+  position:relative;
+  border:none;
+  top:-100px;
+  left:50px;
+
+  }
+ p.quote{
+ font-size:20px;
+ font-family:'Magiera Script';
+position:relative;
+left:20px;
+top:-130px;
+color:#737373;
+}
