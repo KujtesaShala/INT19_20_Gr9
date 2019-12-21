@@ -141,20 +141,21 @@ p.titulli{
 #more {
 display: none;
 }
-display: none;
-}
-
 pre{
- float: left;
-  left: 800px;
-  position: relative;
+font-family: monospace;
+  white-space: pre;
+    margin-top: -200px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 1000px;
+
 }
 button.butoni
 {
 position:relative;
 left:1050px;
 border:none;
-top:-220px;
+top:-80px;
 }
 button.butoni{
  
