@@ -144,7 +144,7 @@ p.titulli{
   position: relative;
   left: 950px;
   border:none;
- top:-200px;
+ top:-250px;
  font-size:30px;
  font-family:'Tempus Sans ITC';
 }
@@ -154,22 +154,22 @@ display: none;
 pre{
 font-family: monospace;
   white-space: pre;
-    margin-top: -200px;
+    margin-top: -270px;
   margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 1000px;
+  margin-right: 160px;
+  margin-left: 960px;
 
 }
 button.butoni
 {
 position:relative;
-left:1050px;
+left:970px;
 border:none;
 top:-80px;
 }
 button.butoni{
  
-  width: 12%;
+  width: 10%;
   padding: 10px;
   background: #2196F3;
   color: white;
@@ -188,7 +188,7 @@ button.butoni{
   color:#262626;
   position:relative;
   border:none;
-  top:-100px;
+  top:-40px;
   left:50px;
 
   }
@@ -197,7 +197,7 @@ button.butoni{
  font-family:'Magiera Script';
 position:relative;
 left:20px;
-top:-130px;
+top:-90px;
 color:#737373;
 }
 div.tabelat{
