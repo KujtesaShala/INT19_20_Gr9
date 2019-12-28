@@ -200,6 +200,11 @@ left:20px;
 top:-130px;
 color:#737373;
 }
+div.tabelat{
+position:relative;
+left:250px;
+top:-70px;
+}
 
 fieldset {
   display: block;
@@ -246,6 +251,38 @@ div.submiti
 {
 	position:relative;
 	left:1px;
+}
+form.forma3 button {
+  font-family:"Times New Roman";
+  float: right;
+  width: 25%;
+  padding: 1px;
+  background: #2196F3;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  border-radius:16px;
+ }
+
+form.forma3 butoni3:hover {
+  background: #0b7dda;
+  
+}
+div.divi3
+{
+  position:relative;
+  top:-50px;
+  left:-500px;
+}
+button.butoni3 a{
+  position:relative;
+  right:15px;
+    color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:20px;
 }
 h2,p
 {
@@ -307,4 +344,12 @@ h2,p
 	font-family:"Arial";
 	font-size:15px;
 	color:#a6a6a6;
+}
+.divi3 a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
