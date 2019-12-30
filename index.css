@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 20px;
+    padding: 2px;
     background-color: #ffffff;
     width: 100%;
     height: 100%;
@@ -237,10 +237,17 @@ form.forma2 button {
 form.forma2 butoni2:hover {
   background: #404040;
 }
+form.forma2 button
+{
+  position:relative;
+  left:87px;
+  top:36px;
+}
+
 div.submiti
 {
 	position:relative;
-	left:1px;
+	left:-70px;
 }
 form.forma3 button {
   font-family:"Times New Roman";
@@ -289,7 +296,7 @@ h2,p
   text-decoration: none;
   margin: 70px 5px 20px 10px;
   position:relative;
-  left:80px;
+  left:50px;
   top:-40px;
   border:0.01px solid white;
   
