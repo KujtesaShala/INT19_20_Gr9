@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<link rel='stylesheet' href="aboutt.css">
+   <link rel='stylesheet' href="feedback.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+    $(".toggle").click(function(){
+        $(".frmbg").slideToggle("6000");
+
+    }); 
+});
+</script>
+
+</head>
+<body>
+
+	<hr>
+    <div class="header">
+        <div class="searchbox">
+            <input type="text" id="search" placeholder="Search Our Website...">
+            <input type="submit" value="SEARCH" id="submit">
+        </div>
+        <h1>myPrishtina</h1>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activites">Activites</a></li>
+                    <li><a href="#eatdrink">Eat&Drink</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="aboutt.html" class="active">About</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <hr class="new1">
+
+        <h2>About Prishtina</h2>
+<pre class="pre1">    Prishtina is the capital and largest city of Kosovo with over 400.000 inhabitants, making it the administrative center. 
+   The majority of the population is ethnic Albanian. The minorities comprise of Serb, Turk, and Roman ethnicity.
+   here are old and ancient ruins left for the new generation – one that has had to adapt and grow quickly as the world is
+    reaching the next leap towards the outer general transformation.
+    The city has grown in population and size after the war. It is now a very dynamic city with head-spinning offers 
+    and life exasperating from all sides. The city has changed a lot during the years,
+    although there are constant trials of keeping the vibes – and the vibes do stand groovy. 
+    Yet, there is constant noise and life splurging at your face in every corner.
+    It has become a modern city, but without a river! Prishtina used to have a nice river flowing right through the middle of the city.
+    But now, it is covered in cement and only flows out in the suburbs towards the north and south.
+    The water supply comes from two main reservoirs of Badovci and Batllava, 
+    two nice artificial lakes surrounded by lush nature making it a very nice spot for a casual picnic!</pre>
+    <div class="klasavideo">
+    	<video width="500" height="300" controls>
+    		<source src="Prishtina _Qyteti i Ëndrrave_  4K (prod. LindyProduction).mp4" type="video/mp4"
+    		Your browser does not suppor the video tag
+    	</video>
+    </div>
+
+
+
+<h2 class="titulli1">Reasons to visit Prishtina</h2>
+        <pre class="pre2">
+       Coming to <mark id="repl">Prishtina</mark> will be one experience for which you may have to leave first and then continue processing what you’ve been exposed to while on the road.
+     There’s a great many ways to travel back in time… it’s that kind of a ride that you must try out at least once in your lifetime.</pre>
+
+<h2 class="titulli2">HERE ARE SOME REASONS TO VISIT PRISHTINA:</h2>
+<div class="menuja">
+	<a href="#">Caffee Culture</a>
+	<a href="#">More pics from gallery</a>
+	<a href="#">National Library</a>
+	<a href="#">Newborn monument</a>
+</div>
+
+<h2 class="titulli3 ">Is Prishtina a safe place?</h2>
+<pre class="pre3">We have asked some visitors and they told us that Prishtina is a safe place to visit.
+The streets are full of people until late hours and no one really bothers you if needed.</pre>
+
+ 
+
+
+
+
+
+
+ 
+  <button class="butoni1" onclick="getLocation()">Click here to see the cordinates</button>
+ 
+ <p id="demo"></p>
+
+
+
+<div class="enquiry">
+    
+
+    <div class="toggle">
+    Feedback
+    </div>
+    
+    
+    <div class="frmbg">
+    
+    
+    
+    <form action="#" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name ="phone" placeholder="Mobile" required >
+    <input type ="password" name="password" placeholder="password" required>
+    <input type="text" name="email" placeholder="Email" required >
+    <textarea placeholder="Message" required ></textarea>
+    <input type="submit" name="submit" value="Send">
+    </form>
+    </div>
+    
+    </div>
+             
+     
+     <script> 
+var x=document.getElementById("demo");
+
+function getLocation(){
+	if(navigator.geolocation){
+
+	    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+
+
+</script>
+
+            
+
+                               
+          
+</body>
+</html>
