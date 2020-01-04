@@ -1,0 +1,595 @@
+* {
+  box-sizing: border-box;
+}
+body{
+width: 100%;
+height: 100%;
+padding:0;
+margin:0;
+overflow-x:hidden;
+
+}
+header {
+  text-align: center;
+  padding: 10px;
+}
+footer {
+  padding:10px;
+}
+hr {
+    border: 2px solid #368BC1;
+}
+
+h1 {
+    font-family: 'roboto';
+    font-size: 40px;
+    padding: 30px;
+}
+
+.searchbox {
+    margin: 20px;
+    overflow: hidden;
+    width: 450px;
+    float: right;
+}
+
+    .searchbox #search {
+        border: 1px solid #CCC;
+        border-radius: 10px;
+        color: #999;
+        background-color: #E8E8E8;
+        float: left;
+        font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
+        height: 42px;
+        padding: 10px;
+        width: 340px;
+    }
+
+    .searchbox #submit {
+        background-color: #368BC1;
+        border: 1px solid #00748f;
+        border-radius: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        height: 42px;
+        float: right;
+        font: 15px Arial, Helvetica;
+        padding: 0;
+        width: 100px;
+    }
+
+nav {
+    float: right;
+    margin-right: 23px;
+    margin-top: -40px;
+}
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 45px;
+        padding-top: 26px;
+    }
+
+    nav a {
+        color: #4E4E4E;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+    }
+
+        nav a:hover {
+            color: #368BC1;
+        }
+		nav a:visited
+		{
+			background-color:white;
+		}
+
+#active {
+    color: #368BC1;
+}
+
+hr.new1 {
+    height: 1px;
+    background-color: #D8D8D8;
+    border: none;
+    width: 100%;
+    margin-top: 60px;
+}
+
+
+
+
+.rresht {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.kolonat {
+  -ms-flex:50%;
+  flex: 50%;
+  padding: 30px 4px;
+}
+
+.kolonat img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+ 
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#000000;
+}
+.container:hover .overlay {
+  opacity: 0.6;
+}
+
+.text1 {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text2 {
+  color: white;
+  font-size:20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text3 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text4 {
+  color: white;
+  font-size:13px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text5 {
+  color: white;
+  font-size:16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text6 {
+  color: white;
+  font-size:11px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text7 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text8 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text9 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text10 {
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text11 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text12 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text13 {
+  color: white;
+  font-size:10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text14 {
+  color: white;
+  font-size:14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text15 {
+  color: white;
+  font-size:16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text16 {
+  color: white;
+  font-size:16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text17 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text18 {
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text19 {
+  color: white;
+  font-size:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text20 {
+  color: white;
+  font-size:18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text21 {
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align:left;
+}
+.text22 {
+  color: white;
+  font-size:16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+.text23 {
+  color: white;
+  font-size:20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text24{
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text25{
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text26{
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text27{
+  color: white;
+  font-size:17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+	
+.mySlides {display: none}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+ 
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+#idvideo {
+    height: 49%;
+    width: 49%;
+    object-fit:cover;
+    z-index: -100;
+   position:absolute;
+	right:680px;
+	top:6520px;
+    background: url(..pr48.jpg) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.klasavideo {
+    height: 30%;
+    width: 30%;
+    background: url(..pr48.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+
+
+.svg-wrapper {
+  height: 60px;
+	margin: 0 auto;
+  position: relative;
+  top: 55px;
+  left:30px;
+  transform: translateY(-50%);
+  width: 400px;
+  
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #b3b3b3;
+}
+
+.text {
+  color:#262626;
+  font-family: 'Roboto Condensed';
+  font-size: 28px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+  left:7px;
+  
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+#idtext {
+text-align: center;
+font-size:25px;
+font-family:'Magiera Script';
+
+ 
+}
+
+#idtext {
+  padding:50px;
+  display: none;
+}
+
+
+
+
+
+
+
+
+
