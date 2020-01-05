@@ -14,6 +14,9 @@ body {
     background-image:url("background1.gif");
     background-repeat:repeat;
     background-attachment:fixed;
+    background-size:auto;
+    background-origin:content-box;
+
 
 
 }
@@ -178,7 +181,7 @@ pre.pre3{
 {
     position:relative;
     left:500px;
-    background-attachment: fixed;
+    
 
 }
 mark{
@@ -373,15 +376,34 @@ form.forma4{
 }
 .kordinatat{
 
-    text-align:center;
+    text-align:left;
     font-size:30px;
 }
-.butoni1{
 
-    width:50px;
-    height:50px;
-    position: relative;
-    left:500px;
-background-color:lightblue;
-color:black;
+.k1{
+    width:60px;
+    height:40px;
+    font-size:20px;
+    background-color:lightblue;
+    color:black;
+}
+
+
+.load{position:absolute;top:200px;transform:translate(-50%, -50%);
+  /*change these sizes to fit into your project*/
+  width:100px;
+  height:100px;
+}
+.load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+
+.load :first-child{background:#19A68C;animation-delay:-1.5s}
+.load :nth-child(2){background:#F63D3A;animation-delay:-1s}
+.load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+.load :last-child{background:#193B48}
+
+@keyframes spin{
+  0%,100%{transform:translate(0)}
+  25%{transform:translate(160%)}
+  50%{transform:translate(160%, 160%)}
+  75%{transform:translate(0, 160%)}
 }
