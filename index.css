@@ -195,7 +195,11 @@ position:relative;
 left:250px;
 top:-70px;
 }
+address{
+  text-align:left;
+  font-style:italic;
 
+}
 fieldset {
   display: block;
   margin-left: 3px;
