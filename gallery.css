@@ -506,7 +506,6 @@ hr.new1 {
     height: 49%;
     width: 49%;
     object-fit:cover;
-    z-index: -100;
    position:absolute;
 	right:680px;
 	top:6525px;
@@ -532,6 +531,7 @@ hr.new1 {
   left:30px;
   transform: translateY(-50%);
   width: 400px;
+  cursor: pointer;
   
 }
 
