@@ -280,25 +280,36 @@ button.butoni3 a{
   color:#C0C0C0;
 }
 
-.footer1 .footer-icons{
-  margin-top: 25px;
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 25px;
+  height:18px;
+  text-align: center;
+  text-decoration: none;
+  margin: 60px 5px 20px 10px;
+  position:relative;
+  left:30px;
+  top:-45px;
+  border:0.01px solid white;
+  
 }
 
-.footer1 .footer-icons a{
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  background-color:  #33383b;
-  border-radius: 2px;
+.fa:hover {
+    opacity: 0.7;
+}
 
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 35px;
-
-  margin-right: 3px;
-  margin-bottom: 5px;
+.fa-instagram {
+ background: linear-gradient(to bottom right, #660066 0%, #ff3300 100%);
+  color: white;
+}
+.fa-facebook {
+  background:linear-gradient(to bottom right, #ffffff -131%, #0039e6 160%);
+  color: white;
+}
+.fa-twitter {
+  background:#3366ff;
+  color: white;
 }
 @media (max-width: 880px) {
 
