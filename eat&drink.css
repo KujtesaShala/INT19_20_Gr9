@@ -84,8 +84,8 @@ hr.new1 {
 
 
 @font-face {
-    font-family: 'roboto';
-    src: url(font/Roboto-Bold.ttf);
+    font-family: 'Franklin Gothic Book';
+    
     font-style: normal;
     font-size: 40px;
 }
@@ -103,8 +103,8 @@ p.titull1{
     position:absolute;
     left:370px;
     text-align:center;
-    font-family:'roboto';
-    font-size:24px;
+    font-family:'Bradley Hand ITC';
+    font-size:22px;
     font-style: italic;
 }
 .kolon
