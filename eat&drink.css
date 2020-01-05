@@ -89,6 +89,24 @@ hr.new1 {
     font-style: normal;
     font-size: 40px;
 }
+
+p.titull2{
+    position:absolute;
+    left:350px;
+    font-size:50px;
+    top:200px;
+    font-weight: bold;
+    
+}
+
+p.titull1{
+    position:absolute;
+    left:370px;
+    text-align:center;
+    font-family:'roboto';
+    font-size:24px;
+    font-style: italic;
+}
 .kolon
 {
 	float:left;
@@ -129,3 +147,37 @@ hr.new1 {
 }
 
 	
+    
+canvas {
+
+    border: 1px solid white;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+    
+.svg:first-child {
+    margin-left: 8%;
+}
+
+.can-vas {
+    max-width: 100%;
+}
+
+@import "bourbon";
+
+// elle
+$size: 1;
+
+// elleme
+$width: 52px * $size;
+$height: 60px * $size;
+
+#interacthings { 
+  @include position(absolute, 50% 0 0 50%);
+  @include transform(translateX(-50%) translateY(-50%));
+  @include size($width $height);
+}
