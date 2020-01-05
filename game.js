@@ -185,4 +185,4 @@ AIPlayer(); //init AI player
   
  animate(); //init animate(); function
 
-}; 
+};
