@@ -328,3 +328,15 @@ button.butoni3 a{
     background-color:  #4dc3ff;
   }
 
+  footer.footer1 fieldset.copyright{
+  display: block;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 60em;
+  padding-right: 1em;
+  border:0.5px solid grey;
+  background-color:#262626;
+}
+

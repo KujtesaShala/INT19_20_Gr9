@@ -271,13 +271,15 @@ NEWBORN from 2014 honors the brave heroes who stood up for Kosovo
   <div class="mySlides fade">
 <img src="nb4.png" style="width:100%">
 <div class="overlay">
-   <div class="text17"><pre>NEWBORN of 2015 was about freedom of speech.
-   All citizens were invited to paint whatever they wanted in all letters,
+   <div class="text17"><h2>NEWBORN of 2015 was about freedom of speech</h2>
+   <pre>All citizens were invited to paint whatever they wanted in all letters,
    except for the letter E.
    That letter was left black to symbolise the struggles Kosovo had then
    with Economy, Europe, Exodus and all the other E-s of that time.
 Nevertheless the cheerful paintings on the other letters 
 speak plenty about Kosovars and our nature.</pre>
+     <button onclick="myFunction()">Find caracter</button>
+  <h2 id="demo"></h2>
 </div>
 </div>
 </div>
@@ -431,6 +433,12 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+}
+function myFunction() {
+  var str = "NEWBORN";
+  var patt = new RegExp("e");
+  var res = patt.test(str);
+  document.getElementById("demo").innerHTML = res;
 }
 </script>
 </body>
