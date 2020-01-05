@@ -518,7 +518,7 @@ hr.new1 {
 .klasavideo {
     height: 30%;
     width: 30%;
-    background: url(..pr48.jpg) no-repeat center;
+    background: url(..pr48.jpg);
     background-size: cover;
 }
 
