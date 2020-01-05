@@ -1,188 +1,365 @@
-
-window.onload=function(){
-var c;
-var canvas = document.querySelector("canvas");
-c=document.querySelector("canvas");
-c=c.getContext("2d");
-c.width=300;
-c.height=200;
-var ballX=c.width/2; //x axis start postition
-var ballY=c.height/2;//y axis start postition
-var ballRadius=4;
-var dx=1; //x velocity
-var dy=1; //y velocity
-var paddle1X=0, paddle1Y=80, paddle1WIDTH=3, paddle1HEIGHT=35;
-var paddle2X=297, paddle2Y=80, paddle2WIDTH=3, paddle2HEIGHT=35;
-var score1=0;
-var score2=0;
-var AI=.9; // AI= 0 for multiplayer
-
-
-//mousemove eventListener controls
-window.addEventListener("mousemove",function(event) {paddle1Y=event.clientY-innerHeight/2-paddle1HEIGHT/2+c.height/2; event.preventDefault();});
-//touchmove eventListener controls
-canvas.addEventListener("touchmove", function(e){
-		var rect = canvas.getBoundingClientRect();
-		var root = document.documentElement;
-		var touch = e.changedTouches[0];
-		var touchY = parseInt(touch.clientY) - rect.top - root.scrollTop ;
-		e.preventDefault();
-		paddle1Y = touchY - paddle1HEIGHT/2;});
-		
-		
-		
-		
-		
-//keyboard controls
-function dealWithKeyboard(e) {
-  if (e.keyCode == "81") { //q
-	paddle1Y-=2;
-  }
-  else if (e.keyCode == "65"){ //a
-	paddle1Y+=2;
-  }
-  if (e.keyCode == "38") { //arrow up
-	paddle2Y-=2;
-  }
-  else if (e.keyCode == "40"){ //arrow down
-	paddle2Y+=2;
-  }
-}
-
-
-//game reset
-function reset(){ //reset game == center ball
-  ballX=c.width/2; //center
-  ballY=c.height/2; //center
-  dx = 1; //reset speed
-  dy = 1; //reset speed
-  //AI = 1; //reset AI
-}
-
-//CORE ANIMATE FUNCTION  
-function animate(){
-requestAnimationFrame(animate);
-  
-c.clearRect(0,0,c.width,c.height); // x, y, innerWidth, innerHeight //clears canvas
-c.beginPath(); //begin
-  
-//canvas arc circle == ball
-c.arc(ballX, ballY, ballRadius, 0, Math.PI*2, false); //c.arc(x,y,r,startAngle,endAngle, drawCounterClockwise)
-c.fill(); //fill inside
-c.stroke();//stroke edges
-  
-  
-//canvas paddle1 == player 1 paddle
-c.beginPath(); //begin
-c.fillRect(paddle1X,paddle1Y,paddle1WIDTH,paddle1HEIGHT); //x,y,width,height
-
-
-//canvas paddle2 == player 2 paddle
-c.beginPath(); //begin
-c.fillRect(paddle2X,paddle2Y,paddle2WIDTH,paddle2HEIGHT); //x,y,width,height
-  
-  
-//score text for player 1 and player 2
-c.fillText(score1, 100, 10); //score 1
-c.fillText(score2, c.width-100, 10); //score 2 
-  
-//game colors + random choice of color
-var gameColors=['red', 'green', 'blue', 'black', 'brown', '#741a1a', '#121f1f'];
-var randomColor = gameColors[Math.floor(Math.random() * gameColors.length)]; //index random color
-  
-  
-//IF BALL TOUCHES RIGHT PADDLE THEN BOUNCE BACK
-function paddle2Bounce(){
-if (ballX+ballRadius > c.width){
-		  
-  if (ballY >= paddle2Y && ballY <= paddle2Y + paddle2HEIGHT) {
-	  dx = -dx-0.2; //bounce/reverse ball back + make it faster 0.2
-	//dy = dy-0.1;
-	//AI = AI-0.3; //make AI faster
-	c.fillStyle = randomColor;
-	//c.fillStyle = "#"+Math.random().toString(16).slice(-6); //get random color
-   }
-   else{
-	 score1++;
-	  reset();
-   }
-}
-}
-// END OF RIGHT PADDLE BOUNCE
-
-  
-//IF BALL TOUCHES LEFT PADDLE THEN BOUNCE BACK
-function paddle1Bounce(){
-if (ballX-ballRadius < 0){
-		  
-  if (ballY >= paddle1Y && ballY <= paddle1Y + paddle1HEIGHT) {
-	dx = -dx+0.2; //bounce/reverse ball back + make it faster 0.2
-	//dy = dy+0.1;
-	c.fillStyle = randomColor;
-	//c.fillStyle = "#"+Math.random().toString(16).slice(-6); //get random color
-  }
-  else{
-	score2++;
-	reset();
-  }
-}
-}
-//END OF LEFT PADDLE BOUNCE
-			  
-  
-//BOUNCE BALL IF IT TOUCHES TOP OR BOTTOM OF THE SCREEN
-function topBottomBounce(){
-if(ballY+ballRadius > c.height || ballY-ballRadius < 0){
-  dy = -dy; //bounce/reverse ball
-  //c.fillStyle = randomColor;
-  //c.fillStyle = "#"+Math.random().toString(16).slice(-6); //get random color
-}
-}
-  
-//IF PADDLE IS ABOVE OR BELOW CANVAS - GET IT BACK TO CANVAS
-function stayInCanvas(){
-  if(paddle1Y+paddle1HEIGHT > c.height){
-	paddle1Y=c.height-paddle1HEIGHT;
-  }
-  if(paddle1Y < 0){
-	paddle1Y=0;
-  }
-  if(paddle2Y+paddle2HEIGHT > c.height){
-	 paddle2Y=165;
-	 }
-  if(paddle2Y < 0){
-	 paddle2Y=0;
-	 }
-}
-
-  
-//AI player
-function AIPlayer(){
-if(paddle2Y+paddle2HEIGHT/2 < ballY){
-  paddle2Y+=AI;
-}
-else{paddle2Y-=AI;}
-}
-
-
-//move my ball in x and y axis
-function moveBallXandYaxis(){
-  ballX+=dx; //run ball in x axis
-  ballY+=dy; //run ball in y axis
-}
-
-/*
->>>>>>>>>>CALLING FUNCTIONS<<<<<<<<<<
-*/
-moveBallXandYaxis(); //moving ball in x and y axis
-paddle1Bounce(); //bounce/reverse ball from paddle1
-paddle2Bounce(); //bounce/reverse ball from paddle2
-topBottomBounce(); //top and bottom bouncing/reversing ball
-stayInCanvas(); //paddle1 Y axis can be only in canvas.height
-AIPlayer(); //init AI player
-
-} //end of animate(); function
-  
- animate(); //init animate(); function
-
+// Global Variables
+var DIRECTION = {
+	IDLE: 0,
+	UP: 1,
+	DOWN: 2,
+	LEFT: 3,
+	RIGHT: 4
 };
+
+var rounds = [5, 5, 3, 3, 2];
+var colors = ['#1abc9c', '#2ecc71', '#3498db', '#e74c3c', '#9b59b6'];
+
+// The ball object (The cube that bounces back and forth)
+var Ball = {
+	new: function (incrementedSpeed) {
+		return {
+			width: 18,
+			height: 18,
+			x: (this.canvas.width / 2) - 9,
+			y: (this.canvas.height / 2) - 9,
+			moveX: DIRECTION.IDLE,
+			moveY: DIRECTION.IDLE,
+			speed: incrementedSpeed || 9
+		};
+	}
+};
+
+// The paddle object (The two lines that move up and down)
+var Paddle = {
+	new: function (side) {
+		return {
+			width: 18,
+			height: 70,
+			x: side === 'left' ? 150 : this.canvas.width - 150,
+			y: (this.canvas.height / 2) - 35,
+			score: 0,
+			move: DIRECTION.IDLE,
+			speed: 10
+		};
+	}
+};
+
+var Game = {
+	initialize: function () {
+		this.canvas = document.querySelector('canvas');
+		this.context = this.canvas.getContext('2d');
+
+		this.canvas.width = 1400;
+		this.canvas.height = 1000;
+
+		this.canvas.style.width = (this.canvas.width / 2) + 'px';
+		this.canvas.style.height = (this.canvas.height / 2) + 'px';
+
+		this.player = Paddle.new.call(this, 'left');
+		this.paddle = Paddle.new.call(this, 'right');
+		this.ball = Ball.new.call(this);
+
+		this.paddle.speed = 8;
+		this.running = this.over = false;
+		this.turn = this.paddle;
+		this.timer = this.round = 0;
+		this.color = '#2c3e50';
+
+		Pong.menu();
+		Pong.listen();
+	},
+
+	endGameMenu: function (text) {
+		// Change the canvas font size and color
+		Pong.context.font = '50px Courier New';
+		Pong.context.fillStyle = this.color;
+
+		// Draw the rectangle behind the 'Press any key to begin' text.
+		Pong.context.fillRect(
+			Pong.canvas.width / 2 - 350,
+			Pong.canvas.height / 2 - 48,
+			700,
+			100
+		);
+
+		// Change the canvas color;
+		Pong.context.fillStyle = '#ffffff';
+
+		// Draw the end game menu text ('Game Over' and 'Winner')
+		Pong.context.fillText(text,
+			Pong.canvas.width / 2,
+			Pong.canvas.height / 2 + 15
+		);
+
+		setTimeout(function () {
+			Pong = Object.assign({}, Game);
+			Pong.initialize();
+		}, 3000);
+	},
+
+	menu: function () {
+		// Draw all the Pong objects in their current state
+		Pong.draw();
+
+		// Change the canvas font size and color
+		this.context.font = '50px Courier New';
+		this.context.fillStyle = this.color;
+
+		// Draw the rectangle behind the 'Press any key to begin' text.
+		this.context.fillRect(
+			this.canvas.width / 2 - 350,
+			this.canvas.height / 2 - 48,
+			700,
+			100
+		);
+
+		// Change the canvas color;
+		this.context.fillStyle = '#ffffff';
+
+		// Draw the 'press any key to begin' text
+		this.context.fillText('Press any key to begin',
+			this.canvas.width / 2,
+			this.canvas.height / 2 + 15
+		);
+	},
+
+	// Update all objects (move the player, paddle, ball, increment the score, etc.)
+	update: function () {
+		if (!this.over) {
+			// If the ball collides with the bound limits - correct the x and y coords.
+			if (this.ball.x <= 0) Pong._resetTurn.call(this, this.paddle, this.player);
+			if (this.ball.x >= this.canvas.width - this.ball.width) Pong._resetTurn.call(this, this.player, this.paddle);
+			if (this.ball.y <= 0) this.ball.moveY = DIRECTION.DOWN;
+			if (this.ball.y >= this.canvas.height - this.ball.height) this.ball.moveY = DIRECTION.UP;
+
+			// Move player if they player.move value was updated by a keyboard event
+			if (this.player.move === DIRECTION.UP) this.player.y -= this.player.speed;
+			else if (this.player.move === DIRECTION.DOWN) this.player.y += this.player.speed;
+
+			// On new serve (start of each turn) move the ball to the correct side
+			// and randomize the direction to add some challenge.
+			if (Pong._turnDelayIsOver.call(this) && this.turn) {
+				this.ball.moveX = this.turn === this.player ? DIRECTION.LEFT : DIRECTION.RIGHT;
+				this.ball.moveY = [DIRECTION.UP, DIRECTION.DOWN][Math.round(Math.random())];
+				this.ball.y = Math.floor(Math.random() * this.canvas.height - 200) + 200;
+				this.turn = null;
+			}
+
+			// If the player collides with the bound limits, update the x and y coords.
+			if (this.player.y <= 0) this.player.y = 0;
+			else if (this.player.y >= (this.canvas.height - this.player.height)) this.player.y = (this.canvas.height - this.player.height);
+
+			// Move ball in intended direction based on moveY and moveX values
+			if (this.ball.moveY === DIRECTION.UP) this.ball.y -= (this.ball.speed / 1.5);
+			else if (this.ball.moveY === DIRECTION.DOWN) this.ball.y += (this.ball.speed / 1.5);
+			if (this.ball.moveX === DIRECTION.LEFT) this.ball.x -= this.ball.speed;
+			else if (this.ball.moveX === DIRECTION.RIGHT) this.ball.x += this.ball.speed;
+
+			// Handle paddle (AI) UP and DOWN movement
+			if (this.paddle.y > this.ball.y - (this.paddle.height / 2)) {
+				if (this.ball.moveX === DIRECTION.RIGHT) this.paddle.y -= this.paddle.speed / 1.5;
+				else this.paddle.y -= this.paddle.speed / 4;
+			}
+			if (this.paddle.y < this.ball.y - (this.paddle.height / 2)) {
+				if (this.ball.moveX === DIRECTION.RIGHT) this.paddle.y += this.paddle.speed / 1.5;
+				else this.paddle.y += this.paddle.speed / 4;
+			}
+
+			// Handle paddle (AI) wall collision
+			if (this.paddle.y >= this.canvas.height - this.paddle.height) this.paddle.y = this.canvas.height - this.paddle.height;
+			else if (this.paddle.y <= 0) this.paddle.y = 0;
+
+			// Handle Player-Ball collisions
+			if (this.ball.x - this.ball.width <= this.player.x && this.ball.x >= this.player.x - this.player.width) {
+				if (this.ball.y <= this.player.y + this.player.height && this.ball.y + this.ball.height >= this.player.y) {
+					this.ball.x = (this.player.x + this.ball.width);
+					this.ball.moveX = DIRECTION.RIGHT;
+
+					beep1.play();
+				}
+			}
+
+			// Handle paddle-ball collision
+			if (this.ball.x - this.ball.width <= this.paddle.x && this.ball.x >= this.paddle.x - this.paddle.width) {
+				if (this.ball.y <= this.paddle.y + this.paddle.height && this.ball.y + this.ball.height >= this.paddle.y) {
+					this.ball.x = (this.paddle.x - this.ball.width);
+					this.ball.moveX = DIRECTION.LEFT;
+
+					beep1.play();
+				}
+			}
+		}
+
+		// Handle the end of round transition
+		// Check to see if the player won the round.
+		if (this.player.score === rounds[this.round]) {
+			// Check to see if there are any more rounds/levels left and display the victory screen if
+			// there are not.
+			if (!rounds[this.round + 1]) {
+				this.over = true;
+				setTimeout(function () { Pong.endGameMenu('Winner!'); }, 1000);
+			} else {
+				// If there is another round, reset all the values and increment the round number.
+				this.color = this._generateRoundColor();
+				this.player.score = this.paddle.score = 0;
+				this.player.speed += 0.5;
+				this.paddle.speed += 1;
+				this.ball.speed += 1;
+				this.round += 1;
+
+				beep3.play();
+			}
+		}
+		// Check to see if the paddle/AI has won the round.
+		else if (this.paddle.score === rounds[this.round]) {
+			this.over = true;
+			setTimeout(function () { Pong.endGameMenu('Game Over!'); }, 1000);
+		}
+	},
+
+	// Draw the objects to the canvas element
+	draw: function () {
+		// Clear the Canvas
+		this.context.clearRect(
+			0,
+			0,
+			this.canvas.width,
+			this.canvas.height
+		);
+
+		// Set the fill style to black
+		this.context.fillStyle = this.color;
+
+		// Draw the background
+		this.context.fillRect(
+			0,
+			0,
+			this.canvas.width,
+			this.canvas.height
+		);
+
+		// Set the fill style to white (For the paddles and the ball)
+		this.context.fillStyle = '#ffffff';
+
+		// Draw the Player
+		this.context.fillRect(
+			this.player.x,
+			this.player.y,
+			this.player.width,
+			this.player.height
+		);
+
+		// Draw the Paddle
+		this.context.fillRect(
+			this.paddle.x,
+			this.paddle.y,
+			this.paddle.width,
+			this.paddle.height
+		);
+
+		// Draw the Ball
+		if (Pong._turnDelayIsOver.call(this)) {
+			this.context.fillRect(
+				this.ball.x,
+				this.ball.y,
+				this.ball.width,
+				this.ball.height
+			);
+		}
+
+		// Draw the net (Line in the middle)
+		this.context.beginPath();
+		this.context.setLineDash([7, 15]);
+		this.context.moveTo((this.canvas.width / 2), this.canvas.height - 140);
+		this.context.lineTo((this.canvas.width / 2), 140);
+		this.context.lineWidth = 10;
+		this.context.strokeStyle = '#ffffff';
+		this.context.stroke();
+
+		// Set the default canvas font and align it to the center
+		this.context.font = '100px Courier New';
+		this.context.textAlign = 'center';
+
+		// Draw the players score (left)
+		this.context.fillText(
+			this.player.score.toString(),
+			(this.canvas.width / 2) - 300,
+			200
+		);
+
+		// Draw the paddles score (right)
+		this.context.fillText(
+			this.paddle.score.toString(),
+			(this.canvas.width / 2) + 300,
+			200
+		);
+
+		// Change the font size for the center score text
+		this.context.font = '30px Courier New';
+
+		// Draw the winning score (center)
+		this.context.fillText(
+			'Round ' + (Pong.round + 1),
+			(this.canvas.width / 2),
+			35
+		);
+
+		// Change the font size for the center score value
+		this.context.font = '40px Courier';
+
+		// Draw the current round number
+		this.context.fillText(
+			rounds[Pong.round] ? rounds[Pong.round] : rounds[Pong.round - 1],
+			(this.canvas.width / 2),
+			100
+		);
+	},
+
+	loop: function () {
+		Pong.update();
+		Pong.draw();
+
+		// If the game is not over, draw the next frame.
+		if (!Pong.over) requestAnimationFrame(Pong.loop);
+	},
+
+	listen: function () {
+		document.addEventListener('keydown', function (key) {
+			// Handle the 'Press any key to begin' function and start the game.
+			if (Pong.running === false) {
+				Pong.running = true;
+				window.requestAnimationFrame(Pong.loop);
+			}
+
+			// Handle up arrow and w key events
+			if (key.keyCode === 38 || key.keyCode === 87) Pong.player.move = DIRECTION.UP;
+
+			// Handle down arrow and s key events
+			if (key.keyCode === 40 || key.keyCode === 83) Pong.player.move = DIRECTION.DOWN;
+		});
+
+		// Stop the player from moving when there are no keys being pressed.
+		document.addEventListener('keyup', function (key) { Pong.player.move = DIRECTION.IDLE; });
+	},
+
+	// Reset the ball location, the player turns and set a delay before the next round begins.
+	_resetTurn: function(victor, loser) {
+		this.ball = Ball.new.call(this, this.ball.speed);
+		this.turn = loser;
+		this.timer = (new Date()).getTime();
+
+		victor.score++;
+		beep2.play();
+	},
+
+	// Wait for a delay to have passed after each turn.
+	_turnDelayIsOver: function() {
+		return ((new Date()).getTime() - this.timer >= 1000);
+	},
+
+	// Select a random color as the background of each level/round.
+	_generateRoundColor: function () {
+		var newColor = colors[Math.floor(Math.random() * colors.length)];
+		if (newColor === this.color) return Pong._generateRoundColor();
+		return newColor;
+	}
+};
+
+var Pong = Object.assign({}, Game);
+Pong.initialize();
