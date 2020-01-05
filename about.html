@@ -146,7 +146,7 @@ The streets are full of people until late hours and no one really bothers you if
 
             <fieldset>
                 <legend>Get In Touch</legend>
-                <p id="setFunk" style=" text-transform: uppercase; text-align: center; color:#f35300; cursor:pointer;"><u>We really appreciate your feedback</u></p>
+                <p id="setFunk" style=" text-transform: uppercase; text-align: center; color:#f35300; cursor:pointer;">We really appreciate your feedback</p>
 
 
 
@@ -256,10 +256,12 @@ The streets are full of people until late hours and no one really bothers you if
                     </tr>
                     <tr>
                         <td>
-                            <p>
-                                <label>Rate this page: <br /></label>
-                                <input type="number" min="1" max="5" name="rate" />
-                            </p>
+                            <p>Rate us:</p>
+
+                              <input id="demo" type="text">
+                              <button type="button" onclick="myFunction()">Rate</button>
+               <p id="p01"></p>
+                                
                             <p>
                                 <label>Color Collection: <br /></label>
                                 <input type="color" name="color" />
@@ -314,13 +316,45 @@ function showPosition(position) {
 }
 </script>
 
+<script>
+ $("#setFunk").click(function() {
+                $("#setFunk").html("<u>It means a lot for us</u>");
+            });
+            $("#getFunk").click(function(){
+            alert($("#getText").text());
+            });
+             
+            $("#removeFunk").click(function(){
+                $("#removeAll").remove();
+            });
+    
+
+
  <div class="load">
   <hr/><hr/><hr/><hr/>
 </div>
 
 </script>
 
+<script>
 
+    function myFunction() {
+  var message, x;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  x = document.getElementById("demo").value;
+  try { 
+    if(x == "")  throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 0)  throw "too low";
+    if(x > 10)   throw "too high";
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+</script>
           
 </body>
 </html>
