@@ -258,3 +258,132 @@ p.p23{
     display: table;
 
 }
+
+h3 {
+  color: #000000;
+  font-weight: normal;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 35px;
+}
+
+.container {
+  width:250px;
+  border:1px solid transparent;
+  margin:100px auto;
+}
+
+.top .text {
+  margin-left:45px;
+}
+
+.mid .text {
+  margin-left:75px;
+}
+
+.bottom .text {
+  margin-left:30px;
+}
+
+
+
+.fore {
+  position:absolute;
+  z-index:2;
+}
+
+.fore .top {
+  margin:auto;
+  height:50px;
+  width:175px;
+  background:#00D78E;
+  transform: skewY(10deg);
+  -ms-transform: skewY(10deg); 
+  -webkit-transform: skewY(-10deg); 
+}
+
+.fore .mid {
+  margin-top:25px;
+  height:50px;
+  width:250px;
+  background:#00D78E;
+  transform: skewY(-10deg);
+  -ms-transform: skewY(-10deg); 
+  -webkit-transform: skewY(-10deg); 
+}
+
+.fore .bottom {
+  margin:25px auto;
+  height:50px;
+  width:175px;
+  background:#00D78E;
+  transform:skewY(-10deg);
+  -ms-transform:skewY(-10deg); 
+  -webkit-transform:skewY(-10deg);
+}
+
+
+
+
+.back {
+  position:relative;
+}
+
+.back .tip1 {
+  margin-left:-38px;
+  width:0; 
+    height:0; 
+    border-bottom:50px solid transparent;
+    border-right:39px solid #00BD7D;
+}
+
+.back .tip2 {
+  width:0; 
+    height:0; 
+    border-top:50px solid transparent;
+    border-left:39px solid #00BD7D;
+  margin-left:150px;
+}
+
+.back .top_ribbon {
+  height:50px;
+  margin-left:63px;
+  margin-top:-35px;
+  width:150px;
+  background:#00BD7D;
+  transform:skewY(10deg);
+  -ms-transform:skewY(10deg); 
+  -webkit-transform:skewY(15deg); 
+}
+
+.back .top {
+  height:50px;
+  margin-left:38px;
+  margin-top:19px;
+  width:212px;
+  background:#00BD7D;
+  transform: skewY(10deg);
+  -ms-transform: skewY(10deg); 
+  -webkit-transform: skewY(10deg); 
+}
+
+.back .bottom {
+  height:50px;
+  margin-top:32px;
+  width:212px;
+  background:#00BD7D;
+  transform: skewY(10deg);
+  -ms-transform: skewY(10deg); 
+  -webkit-transform: skewY(10deg); 
+}
+
+.back .bottom_ribbon {
+  height:50px;
+  margin-left:38px;
+  margin-top:20px;
+  width:150px;
+  background:#00BD7D;
+  transform: skewY(10deg);
+  -ms-transform: skewY(10deg);
+  -webkit-transform: skewY(15deg); 
+}
