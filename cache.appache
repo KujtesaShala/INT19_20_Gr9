@@ -1,0 +1,23 @@
+CACHE MANIFEST
+
+
+CACHE:
+Index.html
+index.css
+font-roboto-4.7.0/css/font-roboto.css
+Images/pr1.jpg
+Images/pr4.jpg
+Images/pr5.jpg
+Images/pr6.jpg
+Images/pr7.jpg
+Images/pr8.jpg
+Images/pr9.jpg
+Images/pr1
+Images/pr2
+Images/pr3
+
+NETWORK:
+*
+
+FALLBACK:
+*.html offline.html
