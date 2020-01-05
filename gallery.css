@@ -509,15 +509,16 @@ hr.new1 {
    position:absolute;
 	right:680px;
 	top:6525px;
-    background: url(..pr48.jpg) no-repeat center center;
+    background: url(..pr48.jpg);
     background-size: cover;
+    background-repeat: repeat-x;
     overflow: hidden;
 }
 
 .klasavideo {
     height: 30%;
     width: 30%;
-    background: url(..pr48.jpg) no-repeat center center;
+    background: url(..pr48.jpg);
     background-size: cover;
 }
 
