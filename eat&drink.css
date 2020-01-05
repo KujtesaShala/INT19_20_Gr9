@@ -84,8 +84,8 @@ hr.new1 {
 
 
 @font-face {
-    font-family: 'roboto';
-    src: url(font/Roboto-Bold.ttf);
+    font-family: 'Franklin Gothic Book';
+    
     font-style: normal;
     font-size: 40px;
 }
@@ -103,8 +103,8 @@ p.titull1{
     position:absolute;
     left:370px;
     text-align:center;
-    font-family:'roboto';
-    font-size:24px;
+    font-family:'Bradley Hand ITC';
+    font-size:22px;
     font-style: italic;
 }
 .kolon
@@ -180,4 +180,36 @@ $height: 60px * $size;
   @include position(absolute, 50% 0 0 50%);
   @include transform(translateX(-50%) translateY(-50%));
   @include size($width $height);
+}
+
+body {
+  background: white;
+}
+
+.fill {
+  background-image: url('coffee.png');
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.empty {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: solid 3px salmon;
+  background: white;
+}
+
+.hovered {
+  background: #f4f4f4;
+  border-style: dashed;
 }
