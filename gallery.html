@@ -243,9 +243,12 @@ NEWBORN has since been considered a national symbol
 <div class="mySlides fade">
 <img src="nb2.png" style="width:100%">
  <div class="overlay">
-   <div class="text15"><pre>Fun Fact: Kosovars are fond of the international community.
+   <div class="text15"><h2>Newborn 2013</h2>
+    <pre>Fun Fact: Kosovars are fond of the international community.
    The "NEWBORN" design from 2013 in the pic best exemplifies it.
 Truth is we can't easily travel abroad, but we warmly welcome everyone in.</pre>
+<button onclick="Function3()">Click to search for "newborn"</button>
+<h2 id="sh3"></h2>
 </div>
 </div>
 </div>
@@ -278,8 +281,8 @@ NEWBORN from 2014 honors the brave heroes who stood up for Kosovo
    with Economy, Europe, Exodus and all the other E-s of that time.
 Nevertheless the cheerful paintings on the other letters 
 speak plenty about Kosovars and our nature.</pre>
-     <button onclick="myFunction()">Find caracter</button>
-  <h2 id="demo"></h2>
+     <button onclick="Function()">Find character</button>
+  <h2 id="sh"></h2>
 </div>
 </div>
 </div>
@@ -320,8 +323,8 @@ We are counting down one more day to #Kosova10
 <img src="nb7.png" style="width:100%">
 <div class="overlay">
    <div class="text20"><h2>Kosovo celebrates its 10th anniversary</h2>
-       <button onclick="myFunction1()">Find character</button>
-       <h2 id="demo1"></h2>
+       <button onclick="Function1()">Find character</button>
+       <h2 id="sh1"></h2>
    </div>
    </div>
    </div>
@@ -330,11 +333,14 @@ We are counting down one more day to #Kosova10
   <div class="mySlides fade">
 <img src="nb8.png" style="width:100%">
 <div class="overlay">
-   <div class="text21"><pre>Happiness is waking up on Independence Day and seeing 
+   <div class="text21"><h2>  Indepedence Day</h2>
+    <pre>Happiness is waking up on Independence Day and seeing 
    that this year's Newborn design steers away from political motifs
    that have so far characterized it.
    In this year’s design,local artists use doodles to call for protecting
    what’s ours!</pre>
+   <button onclick="Function2()"> Click the button to search for "newborn"</button>
+   <h2 id="sh2"></h2>
 <ul>
 <li style="list-style-type:disc;">N - ature </li>
 <li style="list-style-type:bullets;">E - nergy </li>
@@ -388,7 +394,7 @@ turns into a blooming lavender field.</pre></div></div></div>
 </video>
 </div>
 
-<audio controls>
+<audio controls id="idaudio">
   <source src="audio2.mp3" type="audio/mp3">
  
 Your browser does not support the audio element.
@@ -443,17 +449,29 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
-function myFunction() {
-  var str = "NEWBORN";
+function Function() {
+  var str = "NEWBORN e";
   var patt = new RegExp("e");
   var res = patt.test(str);
-  document.getElementById("demo").innerHTML = res;
+  document.getElementById("sh").innerHTML = res;
 }
-function myFunction1() {
-  var str = "The best things in life are free";
+function Function1() {
+  var str = "newborn a";
   var patt = new RegExp("a");
   var res = patt.exec(str);
-  document.getElementById("demo1").innerHTML = res;
+  document.getElementById("sh1").innerHTML = res;
+}
+function Function2() {
+  var str = "newborn newborn?";
+  var patt1 = /newborn/g;
+  var result = str.match(patt1);
+  document.getElementById("sh2").innerHTML = result;
+}
+function Function3() {
+  var str = "newborn";
+  var patt1 = /newborn/i;
+  var result = str.match(patt1);
+  document.getElementById("sh3").innerHTML = result;
 }
 </script>
 
