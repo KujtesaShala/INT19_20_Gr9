@@ -4,51 +4,9 @@
 
 <title>About</title>
 <link rel='stylesheet' href="about.css">
-   <link rel='stylesheet' href="feedback.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="storage.js" type="text/javascript"></script>
-    <script src="jquery.js" type="text/javascript"></script>
-<script>
-	$(document).ready(function(){
-    $(".toggle").click(function(){
-        $(".frmbg").slideToggle("6000");
 
-        $(document).ready(function() {
-            $("#hide").click(function() {
-                $("#kontaktet").hide();
-            });
-            $("#show").click(function() {
-                $("#kontaktet").show();
-            });
-            $("#fade").click(function(){
-                $("#kontaktet").fadeToggle("slow");
-            });
-            $("#slide").click(function(){
-                $("#kontaktet").slideToggle(1000);
-            });
-            $("#animate").click(function() {
-             $(".butoni0").animate({bottom: '335px'},function(){
-                 alert("You have moved the \"Contact\" button to the upper side")
-                });
-            });
-            $("#setFunk").click(function() {
-                $("#setFunk").html("<u>It means a lot for us</u>");
-            });
-            $("#getFunk").click(function(){
-            alert($("#getText").text());
-            });
-              $("#addFunk").click(function(){
-                $("#addFunk").before("                             <p><label>Middle Name</label><br /><input type=\"text\" id=\"text\" name=\"firstname\" placeholder=\"Your middle name...\" size=\"80\" class=\"required\" /></p>");
-                });
-            $("#removeFunk").click(function(){
-                $("#removeAll").remove();
-            });
-        });
-
-    }); 
-});
-</script>
-
+     
+       
 </head>
 <body>
 
@@ -86,6 +44,8 @@
     But now, it is covered in cement and only flows out in the suburbs towards the north and south.
     The water supply comes from two main reservoirs of Badovci and Batllava, 
     two nice artificial lakes surrounded by lush nature making it a very nice spot for a casual picnic!</pre>
+
+
     <div class="klasavideo">
     	<video width="500" height="300" controls>
     		<source src="Prishtina _Qyteti i Ëndrrave_  4K (prod. LindyProduction).mp4" type="video/mp4"
@@ -175,13 +135,7 @@ The streets are full of people until late hours and no one really bothers you if
                 </div>
             </div>
         </div>
-        <div style="width: 100%;padding: 0px;margin: 10px,0px;height: 30px">
-            <button class="fshehja" id="hide">Hide</button>
-            <button class="fshehja" id="show">Show</button>
-            <button class="fshehja" id="fade">Fade/Show</button>
-            <button class="fshehja" id="slide">Slide/Show</button>
-            <button class="fshehja" id="animate">Animate</button>
-        </div>
+        
 
 
 
@@ -196,35 +150,46 @@ The streets are full of people until late hours and no one really bothers you if
 
 
 
-
-                <table>
+                <table cellpadding="10px"  cellspacing="10px">
                     <tr>
                         <td colspan="2">
+                           <form class="forma1">
+
                             <p>
+
                                 <label>First Name</label><br />
                                 <input type="text" id="text" name="firstname" placeholder="Your name..." size="80" class="required" />
-                            </p>
-                            <button id="addFunk" class="rounded" style="cursor: pointer; margin-right: 60px">Add a middle name</button>
+                            </form>
+                          
+                        <form class="forma2">
                             <p>
                                 <label>Last Name</label><br />
                                 <input type="text" id="text" name="lastname" placeholder="Your last name..." size="80" class="required" />
+
                             </p>
+                        </form>
                             <p>
+                                <form class="forma3">
                                 <label>Password</label><br />
                                 <input type="password" id="text" name="password" placeholder="Your password..." size="80" class="required" />
+                            </form>
                             <p>
+                                <form class="forma4">
                                 <label>Email</label><br />
                                 <input type="email" id="text" name="email" placeholder="Your email..." size="80" class="required" />
                             </p>
+                        </form>
+                    
                             <p>
                                 <label>Subject</label><br />
                                 <textarea name="subject" placeholder="Write something.." rows="12" cols="61" class="required">
+
                </textarea>
                             </p>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td  bgcolor=" #b3b3b3">
                             <p>
                                 <label>Continent</label><br />
                                 <select name="continent">
@@ -313,54 +278,6 @@ The streets are full of people until late hours and no one really bothers you if
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="rectangle centered">
-                                <input type="submit" class="rounded"> <input type="reset" value="Clear Form" class="rounded">
-
-                                <br />
-
-                               
-  <button class="rounded" onclick="getLocation()">Click here to get your location</button>
-
-<p id="demo"></p>
-
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-
-
-
-        <div id="removeAll" style=" display: flex; width: 1000px; margin-left: 12px">
-           
-        </div>
-        <br>
-
-
-   
-
-
-     <script> 
-var x=document.getElementById("demo");
-
-function getLocation(){
-    if(navigator.geolocation){
-
-        navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-
-
 
 </script>
 

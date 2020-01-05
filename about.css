@@ -11,8 +11,9 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    background-image:url('img.jpg');
-    background-repeat:repeat;
+    background-image:url("foto1.png");
+
+
 }
 
 hr {
@@ -175,25 +176,12 @@ pre.pre3{
 {
     position:relative;
     left:500px;
+    background-attachment: fixed;
 
 }
 mark{
     background-color:gray;
-}
-button.butoni1
-{
-    width:300px;
-    height:50px;
-    position: relative;
-    left:10px;
-    background:#368BC1;
-    font-size:15px;
-    border-radius:14px;
-    cursor:pointer;
-    border:1px solid #368BC1;
-}
-#demo{
-    color:#004d80;
+
 }
 #result
 {
@@ -231,6 +219,7 @@ table {
     border-spacing: 0;
     width: 90%;
     margin: 0 auto;
+    border:1px solid black;
 }
 
 table tbody td {
@@ -248,14 +237,14 @@ fieldset {
 }
 
 legend {
-    background-color: #5c5c5c;
+    background-color: lightblue;
     margin: 0 auto;
     width: 90%;
     padding: 0.25em;
     text-align: center;
     font-weight: bold;
     font-size: 100%;
-    color: #f35300;
+    color: black;
 }
 
 form p {
@@ -354,4 +343,29 @@ form p {
 
 .butoni0:hover {
     background-color: #555;
+}
+
+form.forma1{
+
+    text-align:left;
+    text-decoration: none;
+
+}
+form.forma2{
+
+    text-align:left;
+    text-decoration: none;
+    
+}
+form.forma3{
+
+    text-align:left;
+    text-decoration: none;
+    
+}
+form.forma4{
+
+    text-align:left;
+    text-decoration: none;
+    
 }
