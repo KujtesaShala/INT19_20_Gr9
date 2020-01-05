@@ -146,6 +146,14 @@ p.titull1{
 	left:10px;
 }
 
+.paragrafi7{
+    position:relative;
+    left:10px;
+    font-family: 'roboto';
+    font-weight: bolder;
+    font-style: italic;
+
+}
 	
     
 canvas {
