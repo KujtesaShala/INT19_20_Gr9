@@ -271,13 +271,15 @@ NEWBORN from 2014 honors the brave heroes who stood up for Kosovo
   <div class="mySlides fade">
 <img src="nb4.png" style="width:100%">
 <div class="overlay">
-   <div class="text17"><pre>NEWBORN of 2015 was about freedom of speech.
-   All citizens were invited to paint whatever they wanted in all letters,
+   <div class="text17"><h2>NEWBORN of 2015 was about freedom of speech</h2>
+   <pre>All citizens were invited to paint whatever they wanted in all letters,
    except for the letter E.
    That letter was left black to symbolise the struggles Kosovo had then
    with Economy, Europe, Exodus and all the other E-s of that time.
 Nevertheless the cheerful paintings on the other letters 
 speak plenty about Kosovars and our nature.</pre>
+     <button onclick="myFunction()">Find caracter</button>
+  <h2 id="demo"></h2>
 </div>
 </div>
 </div>
@@ -317,7 +319,9 @@ We are counting down one more day to #Kosova10
   <div class="mySlides fade">
 <img src="nb7.png" style="width:100%">
 <div class="overlay">
-   <div class="text20"><pre>Kosovo celebrates its 10th anniversary</pre>
+   <div class="text20"><h2>Kosovo celebrates its 10th anniversary</h2>
+       <button onclick="myFunction1()">Find character</button>
+       <h2 id="demo1"></h2>
    </div>
    </div>
    </div>
@@ -326,7 +330,7 @@ We are counting down one more day to #Kosova10
   <div class="mySlides fade">
 <img src="nb8.png" style="width:100%">
 <div class="overlay">
-   <div class="text21"><pre>   Happiness is waking up on Independence Day and seeing 
+   <div class="text21"><pre>Happiness is waking up on Independence Day and seeing 
    that this year's Newborn design steers away from political motifs
    that have so far characterized it.
    In this year’s design,local artists use doodles to call for protecting
@@ -431,6 +435,18 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+}
+function myFunction() {
+  var str = "NEWBORN";
+  var patt = new RegExp("e");
+  var res = patt.test(str);
+  document.getElementById("demo").innerHTML = res;
+}
+function myFunction1() {
+  var str = "The best things in life are free";
+  var patt = new RegExp("a");
+  var res = patt.exec(str);
+  document.getElementById("demo1").innerHTML = res;
 }
 </script>
 
