@@ -394,7 +394,9 @@ form.forma4{
 }
 
 
-.load{position:absolute;top:200px;transform:translate(-50%, -50%);
+.body{background:#ECF0F1}
+
+.load{position:absolute;top:35%;transform:translate(-50%, -50%);
   /*change these sizes to fit into your project*/
   width:100px;
   height:100px;
