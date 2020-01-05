@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>About</title>
-<link rel='stylesheet' href="aboutt.css">
+<link rel='stylesheet' href="about.css">
    <link rel='stylesheet' href="feedback.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="storage.js" type="text/javascript"></script>
+    <script src="jquery.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function(){
     $(".toggle").click(function(){
         $(".frmbg").slideToggle("6000");
+
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $("#kontaktet").hide();
+            });
+            $("#show").click(function() {
+                $("#kontaktet").show();
+            });
+            $("#fade").click(function(){
+                $("#kontaktet").fadeToggle("slow");
+            });
+            $("#slide").click(function(){
+                $("#kontaktet").slideToggle(1000);
+            });
+            $("#animate").click(function() {
+             $(".butoni0").animate({bottom: '335px'},function(){
+                 alert("You have moved the \"Contact\" button to the upper side")
+                });
+            });
+            $("#setFunk").click(function() {
+                $("#setFunk").html("<u>It means a lot for us</u>");
+            });
+            $("#getFunk").click(function(){
+            alert($("#getText").text());
+            });
+              $("#addFunk").click(function(){
+                $("#addFunk").before("                             <p><label>Middle Name</label><br /><input type=\"text\" id=\"text\" name=\"firstname\" placeholder=\"Your middle name...\" size=\"80\" class=\"required\" /></p>");
+                });
+            $("#removeFunk").click(function(){
+                $("#removeAll").remove();
+            });
+        });
 
     }); 
 });
@@ -55,7 +90,7 @@
     	<video width="500" height="300" controls>
     		<source src="Prishtina _Qyteti i Ëndrrave_  4K (prod. LindyProduction).mp4" type="video/mp4"
     		Your browser does not suppor the video tag
-    	</video>
+    </video>
     </div>
 
 
@@ -76,53 +111,245 @@
 <h2 class="titulli3 ">Is Prishtina a safe place?</h2>
 <pre class="pre3">We have asked some visitors and they told us that Prishtina is a safe place to visit.
 The streets are full of people until late hours and no one really bothers you if needed.</pre>
+</br></br>
 
  
 
 
+<h1 id="team" style="text-align: center; background-color: black; font-family: Arial, Helvetica, sans-serif; color:#f35300;">Team</h1>
 
+        <div class="rresht" id="kontaktet">
+            <div class="shtylle">
+                <div class="karta">
+
+
+                    
+                    <div class="vazo">
+                        <h2>Kujtesa Shala</h2>
+
+                        <p style="color: grey"> CEO &amp; Designer</p>
+
+                        <p> <a href="mailto:kujtesa.shala22@gmail.com" style=" text-decoration: none; color: white;">
+                                <button style="position: relative" class="butoni0">
+                                    Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shtylle">
+                <div class="karta">
+                    
+                    <div class="vazo">
+                        <h2>Lirije Bytyqi</h2>
+                        <p style="color: grey">CEO &amp; Founder</p>
+
+                        <p><a href="mailto:lirie.bytyqqii@hotmail.com" style=" text-decoration: none; color: white;"><button style="position: relative" class="butoni0">
+                                    Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shtylle">
+                <div class="karta">
+                   
+                    <div class="vazo">
+                        <h2>MevlydeHoxha</h2>
+                        <p style="color: grey">Founder &amp; IT</p>
+
+                        <p><a href="mailto:mevlydeihoxha@gmail.com" style=" text-decoration: none; color: white;"><button style="position: relative" class="butoni0">
+                                    Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shtylle">
+                <div class="karta">
+                    
+                    <div class="vazo">
+                        <h2>Shpresa Quni</h2>
+                        <p style="color: grey">Engineer &amp; Analyst </p>
+
+                        <p><a href="mailto:shpresaqu@gmail.com" style=" text-decoration: none; color: white;"><button style="position: relative" class="butoni0">
+                                    Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;padding: 0px;margin: 10px,0px;height: 30px">
+            <button class="fshehja" id="hide">Hide</button>
+            <button class="fshehja" id="show">Show</button>
+            <button class="fshehja" id="fade">Fade/Show</button>
+            <button class="fshehja" id="slide">Slide/Show</button>
+            <button class="fshehja" id="animate">Animate</button>
+        </div>
 
 
 
  
-  <button class="butoni1" onclick="getLocation()">Click here to see the cordinates</button>
- 
- <p id="demo"></p>
+
+            
+<form method="get" action="" id="mainForm">
+
+            <fieldset>
+                <legend>Get In Touch</legend>
+                <p id="setFunk" style=" text-transform: uppercase; text-align: center; color:#f35300; cursor:pointer;"><u>We really appreciate your feedback</u></p>
 
 
 
-<div class="enquiry">
-    
 
-    <div class="toggle">
-    Feedback
-    </div>
-    
-    
-    <div class="frmbg">
-    
-    
-    
-    <form action="#" method="post">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="text" name ="phone" placeholder="Mobile" required >
-    <input type ="password" name="password" placeholder="password" required>
-    <input type="text" name="email" placeholder="Email" required >
-    <textarea placeholder="Message" required ></textarea>
-    <input type="submit" name="submit" value="Send">
-    </form>
-    </div>
-    
-    </div>
-             
-     
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <p>
+                                <label>First Name</label><br />
+                                <input type="text" id="text" name="firstname" placeholder="Your name..." size="80" class="required" />
+                            </p>
+                            <button id="addFunk" class="rounded" style="cursor: pointer; margin-right: 60px">Add a middle name</button>
+                            <p>
+                                <label>Last Name</label><br />
+                                <input type="text" id="text" name="lastname" placeholder="Your last name..." size="80" class="required" />
+                            </p>
+                            <p>
+                                <label>Password</label><br />
+                                <input type="password" id="text" name="password" placeholder="Your password..." size="80" class="required" />
+                            <p>
+                                <label>Email</label><br />
+                                <input type="email" id="text" name="email" placeholder="Your email..." size="80" class="required" />
+                            </p>
+                            <p>
+                                <label>Subject</label><br />
+                                <textarea name="subject" placeholder="Write something.." rows="12" cols="61" class="required">
+               </textarea>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <label>Continent</label><br />
+                                <select name="continent">
+                                    <option>Choose continent</option>
+                                    <option>Africa</option>
+                                    <option>Asia</option>
+                                    <option>Europe</option>
+                                    <option>North America</option>
+                                    <option>South America</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label>Country</label><br />
+                                <select name="country">
+                                    <option>Choose country</option>
+                                    <option>Albania</option>
+                                    <option>Brazil</option>
+                                    <option>United States</option>
+                                    <option>Kosovo</option>
+                                    <option>Scotland</option>
+                                    <option>Canada</option>
+                                    <option>Italy</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label>City</label><br />
+                                <input type="text" id="text" name="city" list="cities" size="40" />
+                                <datalist id="cities">
+                                    <option>Tirana</option>
+                                    <option>Milan</option>
+                                    <option>Montreal</option>
+                                    <option>New York</option>
+                                    <option>Prishtina</option>
+                                    <option>Pekin</option>
+                                </datalist>
+                            </p>
+                        </td>
+                        <td>
+                            <div class="box">
+                                <label>Gender </label><br />
+                                <input type="radio" name="gender" value="1">Male<br />
+                                <input type="radio" name="gender" value="2" checked>Female<br />
+                                <input type="radio" name="gender" value="3" checked>Unspecified<br />
+
+                            </div>
+                            <div class="box">
+                                <label>Interests </label><br />
+                                <input type="checkbox" name="cc">Technology <br />
+                                <input type="checkbox" name="cc">Sport <br />
+                                <input type="checkbox" name="cc">Science <br />
+                                <input type="checkbox" name="cc">Movies<br />
+                                <input type="checkbox" name="cc">Vehicles<br />
+                                <input type="checkbox" name="cc">Other
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="rectangle">
+                                <label>I accept terms and conditions for this website</label>
+                                <input type="checkbox" name="accept" class="required">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <label>Rate this page: <br /></label>
+                                <input type="number" min="1" max="5" name="rate" />
+                            </p>
+                            <p>
+                                <label>Color Collection: <br /></label>
+                                <input type="color" name="color" />
+                            </p>
+                        </td>
+                        <td>
+                            <div class="box">
+                                <p>
+                                    <label>Date Taken: <br /></label>
+                                    <input type="date" name="date" />
+                                </p>
+                                <p>
+                                    <label>Time Taken: <br /></label>
+                                    <input type="time" name="time" />
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="rectangle centered">
+                                <input type="submit" class="rounded"> <input type="reset" value="Clear Form" class="rounded">
+
+                                <br />
+
+                               
+  <button class="rounded" onclick="getLocation()">Click here to get your location</button>
+
+<p id="demo"></p>
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+
+
+
+        <div id="removeAll" style=" display: flex; width: 1000px; margin-left: 12px">
+           
+        </div>
+        <br>
+
+
+   
+
+
      <script> 
 var x=document.getElementById("demo");
 
 function getLocation(){
-	if(navigator.geolocation){
+    if(navigator.geolocation){
 
-	    navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -137,7 +364,6 @@ function showPosition(position) {
 
 </script>
 
-            
 
                                
           
